@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Подать объявление о продаже автомобиля
+{% endblock %}
+
+{% block head %}
+    {{block.super}}
+    <link rel="stylesheet" type="text/css" href="{% static 'autos/style.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="auto_form_add_post">
+    <h2>Подать объявление о продаже автомобиля</h2>
+
+    <form action="" method="post">
+    {% csrf_token %}
+
+    {% comment %}
+        {{ form.as_p }}
+    {% endcomment %}
+        {{ form.non_field_errors }}
+
+        {{ form.name }}
+        {{ form.name.errors }}
+        {{ form.year }}
+        {{ form.price }}
+        {{ form.city }}
+        {{ form.engine }}
+        {{ form.power }}
+        {{ form.mileage }}
+        {{ form.color }}
+        {{ form.gear }}
+        {{ form.transmission }}
+        {{ form.bodytype }}
+        {{ form.rudder }}
+            <button type="submit" class="auto_button">Продолжить</button>
+    </form>
+</div>
+
+{% endblock %}

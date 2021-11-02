@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% load humanize %}
+
+{% block head %}
+    {{block.super}}
+    <link rel="stylesheet" type="text/css" href="{% static 'autos/style.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="detail_container">
+        <div class="detail_title">
+           <h1 class="h1_detail_title">Продажа {{ auto_info.name }}, {{ auto_info.year }} год в городе {{ auto_info.city }}</h1>
+        </div>
+        <div class="detail_info">
+            <div class="detail_photo">
+                {% if auto_info.photo %}
+                    <img src="{{ auto_info.photo.url }}" alt="{{ auto_info.name }}">
+                {% else %}
+                    <h3>Без фото</h3>
+                {% endif %}
+            </div>
+            <div class="detail_params_auto">
+                <div class="detail_auto_price">
+                    {{ auto_info.price | intcomma }} ₽
+                </div>
+                <div class="auto_params">
+                    <table>
+                        <tr>
+                            <th class="th_auto_param">Двигатель</th>
+                            <td>{{ auto_info.engine }}</td>
+                        </tr>
+                        <tr>
+                            <th class="th_auto_param">Мощность</th>
+                            <td>{{ auto_info.power }}</td>
+                        </tr>
+                        <tr>
+                            <th class="th_auto_param">Трансмиссия</th>
+                            <td>{{ auto_info.transmission }}</td>
+                        </tr>
+                        <tr>
+                            <th class="th_auto_param">Привод</th>
+                            <td>{{ auto_info.gear }}</td>
+                        </tr>
+                        <tr>
+                            <th class="th_auto_param">Цвет</th>
+                            <td>{{ auto_info.color }}</td>
+                        </tr>
+                        <tr>
+                            <th class="th_auto_param">Пробег, км</th>
+                            <td>{{ auto_info.mileage }}</td>
+                        </tr>
+                        <tr>
+                            <th class="th_auto_param">Руль</th>
+                            <td class="td_auto_param">{{ auto_info.rudder }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

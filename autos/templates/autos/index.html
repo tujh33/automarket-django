@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% load humanize %}
+
+{% block head %}
+    {{block.super}}
+    <link rel="stylesheet" type="text/css" href="{% static 'autos/style.css' %}">
+{% endblock %}
+
+{% block title %}Главная страница - Auto{% endblock %}
+
+{% block content %}
+
+    <h2>Продажа автомобилей</h2>
+
+    {% for auto in autos %}
+
+    <div class="auto_block">
+        <div class="auto_photo">
+            {% if auto.photo %}
+                <img src="{{ auto.photo.url }}" alt="{{ auto.name }}">
+            {% else %}
+                <h3>Без фото</h3>
+            {% endif %}
+        </div>
+        <div class="info_wrapper">
+            <div class="short_title_block">
+                 <div class="auto_name">
+                    {{ auto.name }}, {{ auto.year }}
+                 </div>
+                 <div class="auto_price">
+                    {{ auto.price | intcomma }} ₽
+                 </div>
+            </div>
+            <div class="full_desc_block">
+                <div class="auto_params">
+                    {{ auto.engine }} ({{ auto.power }}),
+                    {{ auto.transmission }},
+                    {{ auto.gear }},
+                    {{ auto.mileage }} км
+                </div>
+            </div>
+        </div>
+        <a href="auto/{{ auto.pk }}" class="auto_href"></a>
+    </div>
+    {% endfor %}
+
+{% endblock %}
