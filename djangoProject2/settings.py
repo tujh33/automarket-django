@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'autos.apps.AutosConfig',
-    'django.contrib.humanize'
+    'django.contrib.humanize',
+    'rest_framework',
+    'api',
 ]
 
 MIDDLEWARE = [
@@ -128,3 +130,7 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Redis settings
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6379

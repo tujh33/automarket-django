@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'autos/style.css' %}">
 {% endblock %}
 
-{% block title %}Главная страница - Auto{% endblock %}
+{% block title %}Продажа автомобилей{% endblock %}
 
 {% block content %}
 
@@ -22,7 +22,7 @@
             {% if auto.photo %}
                 <img src="{{ auto.photo.url }}" alt="{{ auto.name }}">
             {% else %}
-                <h3>Без фото</h3>
+                <img src="/media/photos/no_auto_photo.png" alt="">
             {% endif %}
         </div>
         <div class="info_wrapper">

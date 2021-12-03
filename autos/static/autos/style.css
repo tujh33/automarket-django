@@ -180,3 +180,41 @@ body{
 
 
 /* end_detail_auto_info */
+
+.post_an_ad {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 100%;
+    box-sizing: border-box;
+    color: hsl(0, 0%, 100%);
+    cursor: pointer;
+    white-space: nowrap;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    max-width: 240px;
+    min-width: 100px;
+    -webkit-flex: 1 1 240px;
+    -ms-flex: 1 1 240px;
+    flex: 1 1 240px;
+    padding: 0 10px;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: hsl(353, 100%, 43%);
+}
+.post_an_ad {
+    color: white !important;
+}
+.post_an_ad:hover {
+    background-color: hsla(353, 100%, 37%, 1);
+}
+
